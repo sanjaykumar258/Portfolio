@@ -187,6 +187,7 @@ const sr = ScrollReveal({
   distance:'60px',
   duration: 2000,
   delay: 300,
+  reset: "true"
 })
 
 sr.reveal('.header')
@@ -196,3 +197,7 @@ sr.reveal('.home__img',{scale: 1})
 sr.reveal('.section__title')
 sr.reveal('.section__subtitle',{delay: 500})
 sr.reveal('.about__description',{delay: 700, origin: 'right'})
+sr.reveal('.skills__header',{delay: 900, origin: 'top'})
+sr.reveal('.qualification_1',{origin: 'left'})
+sr.reveal('.qualification_2',{delay: 900, origin: 'right'})
+sr.reveal('.qualification_3',{delay: 1200, origin: 'right'})
