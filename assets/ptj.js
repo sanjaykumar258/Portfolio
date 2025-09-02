@@ -201,3 +201,27 @@ sr.reveal('.skills__header',{delay: 900, origin: 'top'})
 sr.reveal('.qualification_1',{origin: 'left'})
 sr.reveal('.qualification_2',{delay: 900, origin: 'right'})
 sr.reveal('.qualification_3',{delay: 1200, origin: 'right'})
+
+
+/*==================== Mail Sender ====================*/
+
+// const cname = document.getElementById("contact_name");
+// const ceamil = document.getElementById("contact_email");
+// const cmsg = document.getElementById("contact_msg");
+const esbutton = document.getElementById("email_send_button");
+
+
+const sendEmail = ()=>{
+  let cname = document.getElementById("contact_name").value;
+  let ceamil = document.getElementById("contact_email").value;
+  let cmsg = document.getElementById("contact_msg").value;
+
+  // binding the values from input tag
+  esbutton.setAttribute("href",
+    `https://mail.google.com/mail/?view=cm&fs=1&to=msanjaykumar258@gmail.com&su=${cname}&body=${cmsg}`
+  )
+
+  console.log(esbutton.getAttribute("href"));
+}
+
+esbutton.addEventListener("click",sendEmail);
