@@ -204,7 +204,7 @@
             <!--==================== Skill 1 =================-->
             <div class="skills__content skills__close">
               <div class="skills__header">
-                <i class="fas fa-pencil-ruler skills__icon"></i>
+                <i class="fas fa-swatchbo skills__icon"></i>
 
                 <div class="skill_1">
                   <h1 class="skills__title">Programming Languages</h1>
@@ -255,7 +255,7 @@
              <!--==================== Skill 2 =================-->
             <div class="skills__content skills__close">
               <div class="skills__header">
-                <i class="fas fa-code skills__icon"></i>
+                <!-- <i class="fas fa-swatchbook skills__icon"></i> -->
 
                 <div class="skill_2">
                   <h1 class="skills__title">IT Constructs</h1>
@@ -305,7 +305,7 @@
              <!--==================== Skill 3 =================-->
             <div class="skills__content skills__close">
               <div class="skills__header">
-                <i class="fas fa-swatchbook skills__icon"></i>
+                <!-- <i class="fas fa-swatchbook skills__icon"></i> -->
                 <div class="skill_3">
                   <h1 class="skills__title">Technologies</h1>
                 </div>
@@ -365,7 +365,7 @@
             <!--==================== Skill 4 =================-->
             <div class="skills__content skills__close">
               <div class="skills__header">
-                <i class="fas fa-swatchbook skills__icon"></i>
+                <!-- <i class="fas fa-swatchbook skills__icon"></i> -->
                 <div class="skill_4">
                   <h1 class="skills__title">Libraries</h1>
                 </div>
@@ -425,7 +425,7 @@
             <!--==================== Skill 5 =================-->
             <div class="skills__content skills__close">
               <div class="skills__header">
-                <i class="fas fa-swatchbook skills__icon"></i>
+                <!-- <i class="fas fa-swatchbook skills__icon"></i> -->
                 <div class="skill_5">
                   <h1 class="skills__title">Frameworks</h1>
                 </div>
@@ -464,7 +464,7 @@
             <!--==================== Skill 6 =================-->
             <div class="skills__content skills__close">
               <div class="skills__header">
-                <i class="fas fa-swatchbook skills__icon"></i>
+                <!-- <i class="fas fa-swatchbook skills__icon"></i> -->
                 <div class="skill_6">
                   <h1 class="skills__title">Tools</h1>
                 </div>
@@ -537,7 +537,7 @@
                     >
                     <div class="qualification__calender">
                       <i class="uil uil-calendar-alt"></i>
-                      2019 - 2020
+                      - 2020
                     </div>
                     <span
                       class="button button--flex button--small button--link services__button"
@@ -600,7 +600,7 @@
                     >
                     <div class="qualification__calender">
                       <i class="uil uil-calendar-alt"></i>
-                      2021 - 2022
+                      - 2022
                     </div>
                     <span
                       class="button button--flex button--small button--link services__button"
@@ -691,7 +691,31 @@
                             GALAXY ’24 Phase-II – National Level Technical Symposium Third Prize.
                           </p>
                         </li>
-                       
+                        <li class="services__modal-service">
+                          <i
+                            class="uil uil-check-circle services__modal-icon"
+                          ></i>
+                          <p>
+                            CodeBlaze hackathon winners under open innovation.
+                          </p>
+                        </li>
+                        <li class="services__modal-service">
+                          <i
+                            class="uil uil-check-circle services__modal-icon"
+                          ></i>
+                          <p>
+                            Runners in Edu-Vitality Hackathon in the track of AI in Education.
+                          </p>
+                        </li>
+                        <li class="services__modal-service">
+                          <i
+                            class="uil uil-check-circle services__modal-icon"
+                          ></i>
+                          <p>
+                            Finalist in Dark Pattern Buster Hackathon conducted by Department of Consumer Affairs of India.
+                          </p>
+                        </li>
+                        
                       </ul>
                     </div>
                   </div>
@@ -733,7 +757,7 @@
                   <i class="uil uil-external-link-alt button__icon"></i>
                 </a>
                 <a
-                  href="https://drive.google.com/file/d/1-5WLBj0Jk6NY5_or_XxyIAKO9FOpIaIn/view?usp=sharing"
+                  href="https://github.com/sanjaykumar258"
                   class="button button--flex button--small portfolio__button"
                 >
                   see Live
@@ -812,7 +836,7 @@
                   <i class="uil uil-external-link-alt button__icon"></i>
                 </a>
                 <a
-                  href="https://drive.google.com/file/d/1Me7afXLb7aWkuSPlanGp5R_wdGrE_Eqy/view?usp=sharing"
+                  href="https://github.com/sanjaykumar258"
                   class="button button--flex button--small portfolio__button"
                 >
                   See Live
@@ -966,13 +990,13 @@
           <form action="" class="contact__form grid">
             <div class="contact__inputs grid">
               <div class="contact__content">
-                <label for="" class="content__label">Name</label>
-                <input type="text" class="contact__input" />
+                <label for="" class="content__label">Email</label>
+                <input type="text" class="contact__input" id="contact_email" />
               </div>
 
               <div class="contact__content">
-                <label for="" class="content__label">Email</label>
-                <input type="Email" class="contact__input" />
+                <label for="" class="content__label">Subject</label>
+                <input type="Email" class="contact__input" id="contact_name" />
               </div>
             </div>
 
@@ -980,17 +1004,15 @@
               <label for="" class="content__label">Message</label>
               <textarea
                 name=""
-                id=""
                 cols="0"
                 rows="7"
-                class="contact__input"
+                class="contact__input" id="contact_msg"
               ></textarea>
             </div>
 
             <div>
               <a
-                href=" mailto: msanjaykumar258@gmail.com?subject=Testing out mailto! &body=This is only a test!"
-                class="button button--flex"
+                class="button button--flex" id="email_send_button"
               >
                 Send Message
                 <i class="uil uil-message button__icon"></i>
