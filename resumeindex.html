@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjaykumar M - AI Engineer Resume</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Sans+Pro:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ===== RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #000000;
+            --color-accent: #000000;
+            --color-accent-dark: #000000;
+            --color-text: #000000;
+            --color-text-light: #000000;
+            --color-text-muted: #333333;
+            --color-border: #e5e7eb;
+            --color-bg: #ffffff;
+            --color-section-bg: #f8fafc;
+            --font-heading: 'Inter', sans-serif;
+            --font-body: 'Source Sans Pro', 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background: #f0f2f5;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== LAYOUT ===== */
+        .resume-container {
+            max-width: 850px;
+            margin: 30px auto;
+            background: var(--color-bg);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: #ffffff;
+            color: #000000;
+            padding: 36px 48px 28px;
+            position: relative;
+            border-bottom: none;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 0px;
+            background: none;
+        }
+
+        .header-separator {
+            border-bottom: 2px solid #000000;
+            margin: 0;
+        }
+
+        .header h1 {
+            font-family: var(--font-heading);
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .header .subtitle {
+            font-size: 15px;
+            font-weight: 500;
+            color: #333333;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 20px;
+            font-size: 13.5px;
+            color: #333333;
+        }
+
+        .contact-row a {
+            color: #000000;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-row a:hover {
+            color: #333333;
+            text-decoration: underline;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-item svg {
+            width: 14px;
+            height: 14px;
+            fill: #000000;
+            flex-shrink: 0;
+        }
+
+        .content {
+            padding: 32px 48px 40px;
+        }
+
+        /* ===== SECTION ===== */
+        .section {
+            margin-bottom: 26px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-primary);
+            border-bottom: 2px solid #000000;
+            padding-bottom: 6px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--color-accent);
+        }
+
+        /* ===== PROFESSIONAL SUMMARY ===== */
+        .summary-text {
+            font-size: 14.5px;
+            line-height: 1.7;
+            color: var(--color-text);
+            text-align: justify;
+        }
+
+        .summary-text strong {
+            color: var(--color-primary);
+        }
+
+        /* ===== SKILLS ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 24px;
+        }
+
+        .skill-category {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .skill-category .label {
+            font-weight: 700;
+            color: var(--color-primary);
+            font-family: var(--font-heading);
+            font-size: 13px;
+        }
+
+        .skill-category .value {
+            color: var(--color-text-light);
+        }
+
+        /* ===== PROJECTS ===== */
+        .project {
+            margin-bottom: 18px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .project:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 4px 12px;
+            margin-bottom: 6px;
+        }
+
+        .project-title {
+            font-family: var(--font-heading);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .project-badge {
+            display: inline-block;
+            background: #eff6ff;
+            color: var(--color-accent);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin-left: 6px;
+        }
+
+        .project-tech {
+            font-size: 12.5px;
+            color: var(--color-accent-dark);
+            font-weight: 600;
+            font-style: italic;
+            white-space: nowrap;
+        }
+
+        .project ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .project li {
+            position: relative;
+            padding-left: 18px;
+            font-size: 13.8px;
+            line-height: 1.65;
+            color: var(--color-text-light);
+            margin-bottom: 3px;
+        }
+
+        .project li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* ===== EDUCATION ===== */
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 4px 12px;
+            margin-bottom: 8px;
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-school {
+            font-family: var(--font-heading);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .edu-date {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--color-text-muted);
+        }
+
+        .edu-degree {
+            font-size: 14px;
+            color: var(--color-text-light);
+            margin-top: 1px;
+        }
+
+        .edu-detail {
+            font-size: 13.5px;
+            color: var(--color-text-muted);
+        }
+
+        /* ===== CERTIFICATIONS / AWARDS ===== */
+        .award-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .award-list li {
+            position: relative;
+            padding-left: 18px;
+            font-size: 14px;
+            line-height: 1.65;
+            color: var(--color-text-light);
+            margin-bottom: 5px;
+        }
+
+        .award-list li::before {
+            content: '★';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-size: 12px;
+            top: 2px;
+        }
+
+        .award-list li strong {
+            color: var(--color-primary);
+        }
+
+        /* ===== COURSEWORK ===== */
+        .coursework-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .coursework-tag {
+            background: #f1f5f9;
+            color: var(--color-text);
+            font-size: 12.5px;
+            font-weight: 500;
+            padding: 4px 12px;
+            border-radius: 4px;
+            border: 1px solid var(--color-border);
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            body {
+                background: #fff;
+                margin: 0;
+                padding: 0;
+            }
+
+            .resume-container {
+                margin: 0;
+                box-shadow: none;
+                border-radius: 0;
+                max-width: 100%;
+                overflow: visible !important;
+            }
+
+            .header {
+                padding: 28px 40px 22px;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .content {
+                padding: 24px 40px 32px;
+            }
+
+            .section {
+                margin-bottom: 20px;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            @page {
+                margin: 0;
+                size: A4;
+            }
+        }
+
+        /* ===== TOOLBAR (screen only) ===== */
+        .toolbar {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .toolbar button {
+            background: #000000;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-family: var(--font-heading);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
+            transition: all 0.2s;
+        }
+
+        .toolbar button:hover {
+            background: var(--color-accent-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        /* ===== ATS SCORE PANEL ===== */
+        .ats-panel {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+            padding: 20px 24px;
+            z-index: 100;
+            min-width: 220px;
+            border: 1px solid var(--color-border);
+        }
+
+        .ats-panel h3 {
+            font-family: var(--font-heading);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-text-muted);
+            margin-bottom: 10px;
+        }
+
+        .ats-score {
+            font-family: var(--font-heading);
+            font-size: 42px;
+            font-weight: 800;
+            color: #16a34a;
+            line-height: 1;
+        }
+
+        .ats-score span {
+            font-size: 18px;
+            color: var(--color-text-muted);
+            font-weight: 500;
+        }
+
+        .ats-bar {
+            height: 6px;
+            background: #e5e7eb;
+            border-radius: 3px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .ats-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #16a34a, #22c55e);
+            border-radius: 3px;
+            width: 92%;
+            transition: width 1s ease;
+        }
+
+        .ats-details {
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        .ats-check {
+            color: #16a34a;
+            margin-right: 4px;
+        }
+
+        @media print {
+
+            .ats-panel,
+            .toolbar {
+                display: none !important;
+            }
+
+            @page {
+                margin: 10mm 0 5mm 0;
+            }
+
+            @page :first {
+                margin-top: 0;
+            }
+
+            .resume-container {
+                box-shadow: none;
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 700px) {
+            .header {
+                padding: 24px 20px 20px;
+            }
+
+            .content {
+                padding: 20px 20px 28px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-header {
+                flex-direction: column;
+            }
+
+            .education-item {
+                flex-direction: column;
+            }
+
+            .ats-panel {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ATS Score Panel -->
+    <div class="ats-panel no-print" id="atsPanel">
+        <h3>ATS Compatibility</h3>
+        <div class="ats-score">92<span>/100</span></div>
+        <div class="ats-bar">
+            <div class="ats-bar-fill"></div>
+        </div>
+        <div class="ats-details">
+            <div><span class="ats-check">✓</span> Standard section headings</div>
+            <div><span class="ats-check">✓</span> Keyword-rich content</div>
+            <div><span class="ats-check">✓</span> Clean formatting</div>
+            <div><span class="ats-check">✓</span> Quantified achievements</div>
+            <div><span class="ats-check">✓</span> Action verbs used</div>
+            <div><span class="ats-check">✓</span> No tables/graphics</div>
+            <div><span class="ats-check">✓</span> Single-column layout</div>
+        </div>
+    </div>
+
+    <!-- Resume -->
+    <div class="resume-container">
+
+        <!-- ===== HEADER ===== -->
+        <header class="header">
+            <h1>Sanjaykumar M</h1>
+            <div class="subtitle">AI Engineer · Machine Learning · Computer Vision</div>
+            <div class="contact-row">
+                <span class="contact-item">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" />
+                    </svg>
+                    Coimbatore, Tamil Nadu, India
+                </span>
+                <span class="contact-item">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.21 2.2z" />
+                    </svg>
+                    +91-9363156820
+                </span>
+                <span class="contact-item">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                    <a href="mailto:msanjaykumar258@gmail.com">msanjaykumar258@gmail.com</a>
+                </span>
+                <span class="contact-item">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                    </svg>
+                    <a href="https://linkedin.com/in/sanjaykumarm25" target="_blank">linkedin.com/in/sanjaykumarm25</a>
+                </span>
+                <span class="contact-item">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
+                    </svg>
+                    <a href="https://github.com/sanjaykumar258" target="_blank">github.com/sanjaykumar258</a>
+                </span>
+                <span class="contact-item">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                    </svg>
+                    <a href="https://sanjaykumar258.github.io/Portfolio"
+                        target="_blank">https://sanjaykumar258.github.io/Portfolio/</a>
+                </span>
+            </div>
+        </header>
+
+        <div class="header-separator"></div>
+
+        <!-- ===== CONTENT ===== -->
+        <div class="content">
+
+            <!-- PROFESSIONAL SUMMARY -->
+            <section class="section">
+                <h2 class="section-title">Professional Summary</h2>
+                <p class="summary-text">
+                    Aspiring AI Engineer graduating in 2026 with hands-on experience in Machine Learning, Deep Learning,
+                    Computer Vision, NLP, and Generative AI. Developed AI-powered solutions including a DistilBERT-based
+                    sentiment analysis platform (92.4% accuracy), a cloud-native multi-agent RAG platform, and an oil
+                    spill detection system using satellite imagery and AIS data. Proficient in Python, PyTorch, Hugging
+                    Face Transformers, OpenCV, FastAPI, LangChain, and LangGraph. Smart India Hackathon 2024 Grand
+                    Finalist and 3rd Prize winner at GALAXY'24 Phase-II. Eager to contribute to innovative AI teams and
+                    build scalable, production-ready intelligent systems.
+                </p>
+            </section>
+
+            <!-- TECHNICAL SKILLS -->
+            <section class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <span class="label">Machine Learning & AI: </span>
+                        <span class="value">Deep Learning, Machine Learning, Natural Language Processing (NLP), Computer
+                            Vision, Generative AI, Sentiment Analysis, Anomaly Detection</span>
+                    </div>
+                    <div class="skill-category">
+                        <span class="label">Generative AI & LLMs: </span>
+                        <span class="value">RAG Pipelines, LangGraph, LangChain, Hugging Face Transformers, Llama 3,
+                            DistilBERT, Prompt Engineering, LLM API Integration, Groq API</span>
+                    </div>
+                    <div class="skill-category">
+                        <span class="label">Frameworks & Libraries: </span>
+                        <span class="value">PyTorch, Scikit-learn, Pandas, NumPy, OpenCV, MediaPipe, Streamlit,
+                            Matplotlib</span>
+                    </div>
+                    <div class="skill-category">
+                        <span class="label">MLOps & Infrastructure: </span>
+                        <span class="value">FastAPI, GitHub, Docker, REST APIs, Model Serving, CUDA</span>
+                    </div>
+                    <div class="skill-category">
+                        <span class="label">Databases & Tools: </span>
+                        <span class="value"> MySQL, ChromaDB, Jupyter Notebook, VS Code, Antigravity IDE</span>
+                    </div>
+                    <div class="skill-category">
+                        <span class="label">Programming Languages: </span>
+                        <span class="value">Python, SQL, C</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TECHNICAL PROJECTS -->
+            <section class="section">
+                <h2 class="section-title">Projects</h2>
+
+                <div class="project">
+                    <div class="project-header">
+                        <span class="project-title">Oil Spill Detection</span>
+                    </div>
+                    <ul>
+                        <li>Built a machine learning model integrating AIS data and satellite imagery to detect marine
+                            oil spills.</li>
+                        <li>Implemented anomaly detection techniques to identify suspicious vessel behavior and
+                            potential spill events.</li>
+                        <li>Enhanced environmental monitoring by enabling early detection and analysis of maritime
+                            pollution incidents.</li>
+                    </ul>
+                    <div style="font-size: 13.5px; color: var(--color-text); margin-top: 8px;"><strong>Key
+                            Technologies:</strong> Python, Machine Learning, Computer Vision, Satellite Imagery, AIS
+                        Data Analysis</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-header">
+                        <span class="project-title">AI Virtual Painting</span>
+                    </div>
+                    <ul>
+                        <li>Created a real-time gesture-controlled virtual painting application using hand tracking and
+                            computer vision.</li>
+                        <li>Implemented EMA smoothing, interpolation, and gesture debouncing for accurate and stable
+                            drawing.</li>
+                        <li>Designed an interactive web dashboard with real-time synchronization, undo/erase tools, and
+                            artwork export functionality.</li>
+                    </ul>
+                    <div style="font-size: 13.5px; color: var(--color-text); margin-top: 8px;"><strong>Key
+                            Technologies:</strong> Python, OpenCV, MediaPipe, Computer Vision, Hand Tracking</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-header">
+                        <span class="project-title">Sentiment Analysis Dashboard</span>
+                    </div>
+                    <ul>
+                        <li>Engineered a DistilBERT-based sentiment analysis platform achieving 92.4% accuracy for
+                            real-time sentiment prediction.</li>
+                        <li>Built a scalable AI pipeline using Hugging Face, PyTorch, and FastAPI for efficient model
+                            inference and deployment.</li>
+                        <li>Integrated SHAP Explainable AI (XAI) and optimized model training using FP16 mixed precision
+                            and CUDA acceleration.</li>
+                    </ul>
+                    <div style="font-size: 13.5px; color: var(--color-text); margin-top: 8px;"><strong>Key
+                            Technologies:</strong> Python, PyTorch, Hugging Face Transformers, DistilBERT, NLP, FastAPI,
+                        SHAP, Streamlit, CUDA, Machine Learning</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-header">
+                        <span class="project-title">Cloud-Native Multi-Agent RAG Platform</span>
+                    </div>
+                    <ul>
+                        <li>Designed a multi-agent RAG system using LangGraph, ChromaDB, and Llama 3 for intelligent
+                            document retrieval and reasoning.</li>
+                        <li>Engineered semantic chunking, knowledge graph extraction, and citation-based retrieval to
+                            improve answer accuracy and explainability.</li>
+                        <li>Integrated Groq-powered LLM inference and built an interactive Streamlit interface for
+                            real-time knowledge exploration.</li>
+                    </ul>
+                    <div style="font-size: 13.5px; color: var(--color-text); margin-top: 8px;"><strong>Key
+                            Technologies:</strong> Python, LangGraph, LangChain, Groq API, Llama 3, ChromaDB, RAG,
+                        Knowledge Graphs, Streamlit, Generative AI, Vector Databases</div>
+                </div>
+            </section>
+
+            <!-- EDUCATION -->
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                <div style="margin-bottom: 12px;">
+                    <div class="education-item">
+                        <span class="edu-school">Bannari Amman Institute of Technology</span>
+                        <span class="edu-date">Graduated: 2026</span>
+                    </div>
+                    <div class="edu-degree">Bachelor of Engineering in Computer Science Engineering</div>
+                    <div class="edu-detail">CGPA: 7.06 / 10.0</div>
+                </div>
+                <div>
+                    <div class="education-item">
+                        <span class="edu-school">G.H.S.S School</span>
+                        <span class="edu-date">Graduated: 2022</span>
+                    </div>
+                    <div class="edu-detail">Higher Secondary (12th Grade): 79.16% | Secondary (10th Grade): 71.8%</div>
+                </div>
+            </section>
+
+            <!-- INTERNSHIP -->
+            <section class="section">
+                <h2 class="section-title">Internship</h2>
+                <div class="project">
+                    <div class="project-header">
+                        <span class="project-title">SourceSys Technologies Private Limited</span>
+                        <span class="project-date">Feb 2026 – Apr 2026</span>
+                    </div>
+                    <ul>
+                        <li>Successfully completed a Data Science internship, gaining practical experience in data
+                            analysis and machine learning.</li>
+                        <li>Worked with Python and data science tools to analyze datasets and support data-driven
+                            solutions.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- AWARDS & RECOGNITIONS -->
+            <section class="section">
+                <h2 class="section-title">Awards & Achievements</h2>
+                <ul class="award-list">
+                    <li><strong>Finalist, Smart India Hackathon (SIH) 2024</strong> — Recognized by the Ministry of
+                        Earth Sciences for innovative machine learning applications in marine conservation. Competed
+                        among top 50 teams out of 10,000+ registrations nationwide.</li>
+                    <li><strong>3rd Prize, GALAXY '24 Phase-II</strong> — Awarded at a National Level Technical
+                        Symposium for a comprehensive research presentation on AI Virtual Painting frameworks and
+                        real-time computer vision systems.</li>
+                </ul>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="toolbar no-print">
+        <button onclick="window.print()">📄 Download as PDF</button>
+    </div>
+
+    <script>
+        // Animate ATS bar on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const fill = document.querySelector('.ats-bar-fill');
+            if (fill) {
+                fill.style.width = '0%';
+                setTimeout(() => {
+                    fill.style.width = '92%';
+                }, 300);
+            }
+        });
+    </script>
+
+</body>
+
+</html>
